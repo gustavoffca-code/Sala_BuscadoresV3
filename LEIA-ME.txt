@@ -1,0 +1,63 @@
+A SALA DOS BUSCADORES - BIBLIOTECA 1.1
+10/10/2026
+
+CONTEUDO DO PACOTE
+- design-system/: biblioteca HTML/CSS/JS completa, com 69 componentes.
+- portal/: arquivos novos e atualizados para aplicar ao portal V1 existente.
+  Esta pasta e uma atualizacao, nao um projeto React independente.
+
+ABRIR A BIBLIOTECA
+Extraia o ZIP e abra design-system/catalogo.html.
+A biblioteca tambem pode ser servida por qualquer servidor HTTP local.
+Nesta sessao: http://127.0.0.1:3114/catalogo.html#EstadoSecao
+Previa integrada: http://127.0.0.1:3113/piloto-ui
+
+APLICAR AO PROJETO EXISTENTE
+Use como base Sala_Dos_Buscadores.V1-main.zip.
+Mantenha design-system e portal como pastas irmas. Incorpore os arquivos
+listados em portal/ a copia de desenvolvimento do projeto. Se os
+arquivos de configuracao ja tiverem mudancas posteriores, concilie-as.
+Na pasta portal: npm ci, npm run ds:sync, npm run dev.
+A rota /piloto-ui preserva a autenticacao existente do portal.
+Se recebeu o pacote de piloto anterior, o antigo componente local
+src/components/piloto/Estados.tsx deixou de ser usado; sua versao
+canonica agora fica em src/components/ds/EstadosInterface.tsx.
+
+O QUE FOI INCORPORADO
+- EstadoSecao: estados vazios e falhas com icone, mensagem e acao contextuais.
+- CarregamentoSala: esqueleto da pagina, sem porcentagem simulada.
+- ProgressoReal: degrade horizontal calculado por etapas conhecidas.
+- IconeVolume: camadas neutras, sombra e detalhes de cor.
+- IconeInterface: Lucide simples para navegacao e busca.
+- AvisoContextual e DialogoContextual: orientacao e dialogos acessiveis.
+- NavegacaoLateral: raio 8 px e selecao em degrade horizontal.
+- Catalogo atualizado, exemplos interativos e guias de uso.
+
+PRESERVACAO DOS CARDS DE SALAS
+CardSala.tsx, CardSala/card-sala.css e CardSala/preview.html foram
+conferidos por SHA-256 e permanecem identicos a versao original.
+O piloto agora usa o CardSala original e as salas do repositorio do portal.
+Nenhum redesenho dos cards foi incluido. Os novos componentes ficam
+disponiveis para adocao nas telas; nao foi feita uma migracao global
+de todos os estados vazios do produto nesta atualizacao da biblioteca.
+
+FONTE DOS ESTILOS
+Edite design-system/components/EstadosInterface/estados-interface.css,
+e nao a copia gerada em portal/src/design-system. Rode npm run ds:sync.
+O runtime HTML e gerado de runtime.modelo.js e icones.json. Use
+node design-system/scripts/build.mjs para atualizar exemplos e catalogo.
+O React administra o proprio estado: nao carregue runtimes HTML no portal.
+Licenca Lucide incluida ao lado dos arquivos EstadosInterface.
+
+VALIDACAO
+- Geracao do catalogo: build.mjs --check aprovado.
+- Sincronizacao do portal: ds:check aprovado.
+- TypeScript: tsc --noEmit aprovado.
+- Biome: arquivos alterados sem erros.
+- Testes existentes de navegacao e dialogos: 7 testes aprovados.
+- Verificador de contraste dos tokens: pares de texto aprovados nos 4 temas.
+- Navegador: estados contextuais, progresso por caixas marcadas,
+  propagacao dos 4 temas, dialogo HTML, dialogo React com Escape/retorno
+  de foco, cards originais e catalogo responsivo a 390 px sem overflow
+  horizontal da pagina.
+- Build de producao nao executado nesta rodada.

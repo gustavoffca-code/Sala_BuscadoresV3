@@ -1,0 +1,33 @@
+<!-- @dsCard group="Fundamentos" height=650 subtitle="Dois níveis: Lucide simples e ícones de orientação com volume" -->
+<div class="sdb-stage">
+  <section class="sdb-ui-demo" aria-labelledby="icon-levels">
+    <h2 id="icon-levels" class="sdb-title-2">Uma linguagem, dois níveis</h2>
+    <p class="sdb-footnote">Traço simples na navegação e na busca. Camadas e sombra para orientar em containers, avisos e diálogos.</p>
+    <div class="sdb-ui-demo-icons" aria-label="Ícones de interface">
+      <figure><span data-ui-icon="busca"></span><figcaption>Busca</figcaption></figure>
+      <figure><span data-ui-icon="inicio"></span><figcaption>Painel</figcaption></figure>
+      <figure><span data-ui-icon="biblioteca"></span><figcaption>Biblioteca</figcaption></figure>
+      <figure><span data-ui-icon="historico"></span><figcaption>Atividade</figcaption></figure>
+      <figure><span data-ui-icon="ajustes"></span><figcaption>Ajustes</figcaption></figure>
+    </div>
+    <div class="sdb-ui-demo-icons" aria-label="Ícones de orientação">
+      <figure><span data-ui-volume="pasta" data-ui-size="small"></span><figcaption>Seção vazia</figcaption></figure>
+      <figure><span data-ui-volume="busca" data-ui-size="small"></span><figcaption>Sem resultado</figcaption></figure>
+      <figure><span data-ui-volume="alerta" data-ui-size="small"></span><figcaption>Atenção</figcaption></figure>
+      <figure><span data-ui-volume="escudo" data-ui-size="small"></span><figcaption>Orientação</figcaption></figure>
+    </div>
+    <h3 class="sdb-headline">Símbolos existentes do acervo</h3>
+    <p class="sdb-hint">Os símbolos especializados de marca e proveniência continuam disponíveis abaixo.</p>
+  </section>
+  <div id="icon-grid" class="sdb-material sdb-grid" style="--sdb-col:104px;gap:0;padding:8px;border-radius:24px"></div>
+  <p class="sdb-hint">Grade 24 px, traço 1,7 px, pontas e junções arredondadas. Sem cristais, mandalas, lua, velas, fumaça ou símbolos religiosos.</p>
+</div>
+<script>SalaBuscadores.hydrate();
+var g = document.getElementById("icon-grid");
+SalaBuscadores.icons.forEach(function (n) {
+  var c = document.createElement("div");
+  c.style.cssText = "display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;border-radius:16px";
+  c.innerHTML = SalaBuscadores.icon(n, "sdb-icon--lg") + '<span style="font-size:11px;color:var(--label-secondary)">' + n + "</span>";
+  g.appendChild(c);
+});
+</script>

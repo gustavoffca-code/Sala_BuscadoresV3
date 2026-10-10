@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="solido-claro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CarregamentoSala · A Sala dos Buscadores</title>
+<link rel="stylesheet" href="../tokens.css?v=ef23aedf2e12">
+<link rel="stylesheet" href="../components/bundle.css?v=8852b0631680">
+<link rel="stylesheet" href="../assets/themes.css?v=8c2c029eb81b">
+
+
+<link rel="stylesheet" href="../components/refinement.css?v=5c1550e62d72">
+<link rel="stylesheet" href="../components/EstadosInterface/estados-interface.css?v=bf524aded57f">
+<script>try { var t = new URLSearchParams(location.search).get("tema"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
+<script src="../components/bundle.js?v=27bc36d6d26a"></script>
+<script src="../components/EstadosInterface/estados-interface.js?v=e3211bce0c45"></script>
+</head>
+<body>
+<div class="sdb-stage">
+  <div class="sdb-ui-demo">
+    <div class="sdb-ui-loading sdb-ui-loading-panel" role="status" aria-label="Carregando conteúdo da sala" aria-busy="true">
+      <div aria-hidden="true">
+        <div class="sdb-ui-skeleton-hero"></div><div class="sdb-ui-skeleton-title"></div><div class="sdb-ui-skeleton-line"></div>
+        <div class="sdb-ui-skeleton-grid"><div><span></span><i></i><i></i></div><div><span></span><i></i><i></i></div><div><span></span><i></i><i></i></div></div>
+      </div>
+      <p>Preparando o conteúdo da sala…</p>
+    </div>
+    <p class="sdb-hint">Sem total conhecido, mostre somente o esqueleto. Movimento reduzido desativa a pulsação. Os cards de salas mantêm o desenho original.</p>
+  </div>
+</div>
+<script src="../components/refined.js?v=98df67e3bc61" defer></script>
+<script>
+window.addEventListener('message',function(e){if(e.source!==parent)return;if(['solido-claro','solido-escuro','vidro-claro','vidro-escuro'].includes(e.data?.sdbTheme))document.documentElement.dataset.theme=e.data.sdbTheme;});
+try {new ResizeObserver(function(){parent.postMessage({sdbAltura:Math.ceil(document.body.getBoundingClientRect().height)},'*');}).observe(document.body);}catch{}
+</script>
+</body>
+</html>
