@@ -4,6 +4,14 @@ Versão **1.1** da biblioteca aprovada para o portal, com **69 componentes**, qu
 
 ## Abrir o catálogo
 
+**[Abrir a biblioteca online](https://gustavoffca-code.github.io/Sala_BuscadoresV3/)** — acesso público, sem instalação ou login.
+
+Link direto para compartilhar: https://gustavoffca-code.github.io/Sala_BuscadoresV3/design-system/catalogo.html
+
+O GitHub Pages publica a raiz da branch `main`. Atualizações enviadas para essa branch atualizam o site; `index.html` encaminha para o catálogo e `.nojekyll` mantém a publicação estática, sem transformar os arquivos da biblioteca. Antes de enviar alterações de componentes, rode o gerador e a verificação abaixo.
+
+### Visualização local
+
 Abra [`design-system/catalogo.html`](design-system/catalogo.html) no navegador após baixar ou clonar este repositório. O catálogo funciona por arquivo local ou por um servidor HTTP estático.
 
 ```sh
